@@ -1,0 +1,21 @@
+https://www.codingninjas.com/studio/problems/bubble-sort_624380?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
+
+
+void bubbleSort(vector<int>& arr, int n) 
+{
+    //write your code here
+    for(int i=0;i<n-1;i++){
+        int DidSwap =0;
+        for(int j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                swap(arr[i],arr[j]);
+                DidSwap = 1;
+            }
+        }
+        if(DidSwap=0)
+        break;
+    }
+}
+
+
+TC = O(n)  
