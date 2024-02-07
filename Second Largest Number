@@ -1,0 +1,43 @@
+https://www.codingninjas.com/studio/problems/ninja-and-the-second-order-elements_6581960?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=SUBMISSION
+
+int SecondLargest(vector<int> &a, int n){
+    int largest = a[0];
+    int Slargest = -1;
+    for(int i=1;i<n;i++){
+        if(a[i]>largest){
+            Slargest = largest; 
+            largest =a[i];
+        }
+        else if (a[i]< largest && a[i]>Slargest){
+            Slargest= a[i];
+        }
+    }
+    return Slargest;
+}
+
+int SecondSmallest(vector<int> &a, int n){
+    int smallest = a[0];
+    int Ssmallest = INT_MAX;
+    for(int i=1;i<n;i++){
+        if(a[i]<smallest){
+            Ssmallest = smallest; 
+            smallest =a[i];
+        }
+        else if (a[i] != smallest && a[i]<Ssmallest){
+            Ssmallest= a[i];
+        }
+    }
+    return Ssmallest;
+}
+
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+    // Write your code here.
+    // sort(a.begin(),a.end());
+    // int SecondSmallestElements =a[1];
+    // int SecondLargestElements  =a[n-2];
+   
+    // return {SecondLargestElements,SecondSmallestElements};
+    int Slargest  = SecondLargest(a, n);
+    int Ssmallest = SecondSmallest(a, n);
+    return {Slargest,Ssmallest};
+}
